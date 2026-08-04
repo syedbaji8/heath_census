@@ -2,55 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health Analysis Data</title>
   <link rel="stylesheet" href="./health_analysis.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-   <nav><h1>Health Analysis Census</h1>
-<ul>
-  <li><a href="./index.html" id="home">Home </a></li>
-  <li><a href="./health_contact.html" id="contact">Contact Us </a></li>
-  <li><input type="text" id="conditionInput" placeholder="Enter a health condition">  </li>
-  <li><button id='btnSearch'>Search</button>
-  </li>
+<body class="bg-slate-100 min-h-screen">
 
-</ul>
-</nav>
-<div class="container">
-<div class="analysisForm">
-<h1>Healthcare Data Analysis</h1>
-<div>
-<label for="name">Name:</label>
-<input type="text" id="name">
-</div>
-<div>
-<label>Gender:</label>
-<label for="male">Male</label>
-<input type="radio" name="gender" id="male" value="Male">
-<label for="female">Female</label>
-<input type="radio" name="gender" id="female" value="Female">
-</div>
-<div>
-<label for="age">Age:</label>
-<input type="number" id="age">
-</div>
-<div>
-<label for="condition">Condition:</label>
-<select id="condition">
-  <option value="">Select condition</option>
-  <option value="Diabetes">Diabetes</option>
-  <option value="Thyroid">Thyroid</option>
-  <option value="High Blood Pressure">High Blood Pressure</option>
-</select>
-</div>
-<button id="addPatient">Add Patient</button>
-<h2>Analysis Report</h2>
-<div id="report"></div>
-</div>
-<div class="searchCondition">
-    <div id="result"></div>
-</div>
-</div>
-<script src="./health_analysis.js"></script>
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+
+      <h1 class="text-2xl font-bold">
+        Health Analysis Census
+      </h1>
+
+      <ul class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+
+        <li>
+          <a href="./index.html"
+             id="home"
+             class="hover:text-yellow-300 transition">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="./health_contact.html"
+             id="contact"
+             class="hover:text-yellow-300 transition">
+            Contact Us
+          </a>
+        </li>
+
+        <li class="w-full sm:w-auto">
+          <input
+            type="text"
+            id="conditionInput"
+            placeholder="Enter a health condition"
+            class="w-full sm:w-72 px-4 py-2 rounded-lg border border-gray-300 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+        </li>
+
+        <li>
+          <button
+            id="btnSearch"
+            class="bg-green-500 hover:bg-green-600 px-5 py-2 rounded-lg font-semibold transition">
+            Search
+          </button>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="max-w-7xl mx-auto p-5">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- Form -->
+      <div class="bg-white rounded-xl shadow-lg p-6">
+
+        <h1 class="text-3xl font-bold text-center text-blue-700 mb-8">
+          Healthcare Data Analysis
+        </h1>
+
+        <div class="space-y-6">
+
+          <!-- Name -->
+          <div>
+            <label
+              for="name"
+              class="block font-semibold mb-2">
+              Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+
+          <!-- Gender -->
+          <div>
+
+            <label class="block font-semibold mb-2">
+              Gender
+            </label>
+
+            <div class="flex items-center gap-6">
+
+              <label class="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  value="Male">
+                Male
+              </label>
+
+              <label class="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  value="Female">
+                Female
+              </label>
+
+            </div>
+
+          </div>
+
+          <!-- Age -->
+          <div>
+
+            <label
+              for="age"
+              class="block font-semibold mb-2">
+              Age
+            </label>
+
+            <input
+              type="number"
+              id="age"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+
+          </div>
+
+          <!-- Condition -->
+          <div>
+
+            <label
+              for="condition"
+              class="block font-semibold mb-2">
+              Condition
+            </label>
+
+            <select
+              id="condition"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+
+              <option value="">Select condition</option>
+              <option value="Diabetes">Diabetes</option>
+              <option value="Thyroid">Thyroid</option>
+              <option value="High Blood Pressure">High Blood Pressure</option>
+
+            </select>
+
+          </div>
+
+          <!-- Button -->
+          <button
+            id="addPatient"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-lg font-semibold transition">
+            Add Patient
+          </button>
+
+        </div>
+
+        <!-- Report -->
+        <div class="mt-10">
+
+          <h2 class="text-2xl font-bold mb-4 text-gray-700">
+            Analysis Report
+          </h2>
+
+          <div
+            id="report"
+            class="border rounded-lg bg-slate-50 min-h-48 p-4 overflow-auto">
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Search Result -->
+      <div class="bg-white rounded-xl shadow-lg p-6">
+
+        <h2 class="text-2xl font-bold mb-5 text-blue-700">
+          Search Results
+        </h2>
+
+        <div
+          id="result"
+          class="border rounded-lg bg-slate-50 min-h-[500px] p-4 overflow-auto">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./health_analysis.js"></script>
+
 </body>
 </html>
