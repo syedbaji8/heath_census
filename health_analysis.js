@@ -46,8 +46,8 @@ function searchCondition() {
         const symptoms = foundCondition.symptoms.join(', ')
         const prevention = foundCondition.prevention.join(', ')
         searchResult.innerHTML = `
-        <h2 class="text-30">${foundCondition.name}</h2>
-        <img src="./images/${foundCondition['imagesrc']}" alt="">
+        <h2 class="text-50 text-bold">${foundCondition.name}</h2>
+        <div class="w-full h-[300px] overflow-hidden"><img src="./images/${foundCondition['imagesrc']}" alt=""></div>
         <p><strong>Symptoms:</strong> ${symptoms}</p> <br /><br />
         <p><strong>Prevention:</strong> ${prevention}</p> <br /><br />
         <p><strong>Treatment:</strong> ${foundCondition.treatment}</p> <br /><br />
